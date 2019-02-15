@@ -18,7 +18,7 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
-class ShowDate extends DefaultTask {
+class  ShowDate extends DefaultTask {
 
     String dateMsg = "Now date is: "
 
@@ -29,16 +29,18 @@ class ShowDate extends DefaultTask {
 }
 
 task showDate(type: ShowDate){
-    group = 'My Task'
+    group = 'M yTask'
     description = "Show current date"
-    doFirst {
-        println 'Hello Yevhen Yarema!'
-        println ''
-    }
-    doLast {
-        println ''
-        println 'Goodbye Yevhen Yarema!'
-    }
+}
+
+build.doLast {
+    println ''
+    println 'Goodbye Yevhen Yarema!'
+}
+
+build.doFirst {
+    println 'Hello Yevhen Yarema!'
+    println ''
 }
 
 println project.name
